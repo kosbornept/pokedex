@@ -1,0 +1,35 @@
+* {
+    font-family: 'Manrope', sans-serif;
+    background-color: beige;
+}
+
+.listContainer {
+    border: 1em solid #ba1f1f;
+    padding: 3em;
+    display: inline-flex;
+    width: 90vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.listItem {
+    padding: 3em;
+    outline: .2em solid black;
+    margin: .5em;
+    width: 5vw;
+    text-align: center;
+}
+
+.btnContainer {
+    text-align: center;
+}
+
+.btn {
+    padding: 2em;
+    text-align: center;
+    border: .5em solid #ba1f1f;
+    margin: 3em;
+    background-color: lightgray;
+    color: #ba1f1f;
+    width: 10vw;
+}

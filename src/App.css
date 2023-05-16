@@ -15,7 +15,6 @@
 }
 
 .listItem {
-    padding: 3em;
     width: 5vw;
     text-align: center;
     text-transform: capitalize;
@@ -42,20 +41,41 @@
     justify-content: space-evenly;
     width: 28vw;
     height: 20vh;
+    padding: .2em;
+    cursor: pointer;
 }
 
 .pokeImg {
-    max-width: 15vw;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.nameContainer{
+    margin: 0 auto;
+}
+
+.detailContainer {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: 50%;
 }
 
 .typeContainer {
     margin: .5em;
     padding: .2em;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1em;
     background-color: transparent;
     justify-content: space-evenly;
     text-transform: capitalize;
+}
+
+.imgContainer {
+    width: 50%;
 }
 
 h4 {
@@ -152,4 +172,36 @@ h4.steel {
 h4.fairy {
     color: #D685AD;
     border-color: #D685AD;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContent {
+    width: 70vw;
+    height: 70vh;
+    background-color: #fff;
+}
+
+.modalTitle {
+    text-align: center;
+    background-color: #fff;
+    font-size: 2em;
+    text-transform: capitalize;
+}
+
+.modalBody {
+    padding: 1em;
+    border-top: .1em solid #eee;
+    border-bottom: .1em solid #eee;
 }

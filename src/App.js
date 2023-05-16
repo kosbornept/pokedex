@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PokemonList from "./PokemonList";
 import Pagination from "./Pagination";
+import PokemonCard from "./PokemonCard";
 import './App.css';
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [pokemonURL, setPokemonURL] = useState([]);
   const [pokemonData, setPokemonData] = useState([]);
+  const [show, setShow] = useState(false);
+  const [modalData, setModalData] = useState({});
 
   useEffect(() => {
     setLoading(true);
@@ -46,11 +49,12 @@ function App() {
 
   return (
     <>
-      <PokemonList fPD={fPD} />
+      <PokemonList show={show} setModalData={setModalData} setShow={setShow} fPD={fPD} />
       <Pagination 
         goNextPage={nextPageURL ? goNextPage : null} 
         goPrevPage={prevPageURL ? goPrevPage : null}
       />
+      <PokemonCard modalData={modalData} onClose={() => setShow(false)} show={show} />
     </>
   );
 }

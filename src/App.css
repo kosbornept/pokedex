@@ -1,6 +1,7 @@
 * {
     font-family: 'Manrope', sans-serif;
     background-color: beige;
+    text-transform: capitalize;
 }
 
 .listContainer {
@@ -189,19 +190,58 @@ h4.fairy {
 
 .modalContent {
     width: 70vw;
-    height: 70vh;
-    background-color: #fff;
+    height: fit-content;
+    background-color: beige;
+    border: .5em solid red;
 }
 
 .modalTitle {
     text-align: center;
-    background-color: #fff;
+    background-color: beige;
     font-size: 2em;
     text-transform: capitalize;
 }
 
 .modalBody {
     padding: 1em;
-    border-top: .1em solid #eee;
-    border-bottom: .1em solid #eee;
+    display: flex;
+    gap: 1%
+}
+
+.modalLeft {
+    width: 59%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.modalRight {
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+.modalRight > img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.physicalContainer,
+.abilityContainer,
+.statsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    outline: .1em solid black;
+    padding: .5em;
+}
+
+.physicalContainer > h5,
+.abilityContainer > h5,
+.statsContainer > h5 {
+    border: .1em solid black;
+    padding: 1em;
+    flex-basis: 25%
 }

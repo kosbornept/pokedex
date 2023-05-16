@@ -10,14 +10,15 @@
     width: 90vw;
     flex-direction: row;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .listItem {
     padding: 3em;
-    outline: .2em solid black;
-    margin: .5em;
     width: 5vw;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .btnContainer {
@@ -32,4 +33,123 @@
     background-color: lightgray;
     color: #ba1f1f;
     width: 10vw;
+}
+
+.pokeContainer {
+    outline: .2em solid #ba1f1f;
+    margin: .5em;
+    display: flex;
+    justify-content: space-evenly;
+    width: 28vw;
+    height: 20vh;
+}
+
+.pokeImg {
+    max-width: 15vw;
+}
+
+.typeContainer {
+    margin: .5em;
+    padding: .2em;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+}
+
+h4 {
+    padding: .5em;
+    margin: auto;
+    border: .25em solid;
+}
+
+h4.grass {
+    color: #7AC74C;
+    border-color:#7AC74C;
+}
+
+h4.poison {
+    color: #A33EA1;
+    border-color: #A33EA1;
+}
+
+h4.fire {
+    color: #EE8130;
+    border-color: #EE8130;
+}
+
+h4.flying {
+    color: #A98FF3;
+    border-color: #A98FF3;
+}
+
+h4.water {
+    color: #6390F0;
+    border-color: #6390F0;
+}
+
+h4.normal {
+    color: #A8A77A;
+    border-color: #A8A77A;
+}
+
+h4.electric {
+    color: #F7D02C;
+    border-color: #F7D02C;
+}
+
+h4.ice {
+    color: #96D9D6;
+    border-color: #96D9D6;
+}
+
+h4.fighting {
+    color: #C22E28;
+    border-color: #C22E28;
+}
+
+h4.ground {
+    color: #E2BF65;
+    border-color: #E2BF65;
+}
+
+h4.psychic {
+    color: #F95587;
+    border-color: #F95587;
+}
+
+h4.bug {
+    color: #A6B91A;
+    border-color: #A6B91A;
+}
+
+h4.rock {
+    color: #B6A136;
+    border-color: #B6A136;
+}
+
+h4.ghost {
+    color: #735797;
+    border-color: #735797;
+}
+
+h4.dragon {
+    color: #6F35FC;
+    border-color: #6F35FC;
+}
+
+h4.dark {
+    color: #705746;
+    border-color: #705746;
+}
+
+h4.steel {
+    color: #B7B7CE;
+    border-color: #B7B7CE;
+}
+
+h4.fairy {
+    color: #D685AD;
+    border-color: #D685AD;
 }

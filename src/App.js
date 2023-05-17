@@ -14,6 +14,8 @@ function App() {
   const [pokemonData, setPokemonData] = useState([]);
   const [show, setShow] = useState(false);
   const [modalData, setModalData] = useState({});
+  const [moveData, setMoveData] = useState();
+
 
   useEffect(() => {
     setLoading(true);
@@ -34,8 +36,8 @@ function App() {
   }, [pokemonURL])
 
   // Filter and arrange data
-  const fPD = [...new Map(pokemonData.map(v => [v.data.id, v])).values()]
-  fPD.sort((a,b) => a.data.id - b.data.id)
+  const fPokeData = [...new Map(pokemonData.map(v => [v.data.id, v])).values()]
+  fPokeData.sort((a,b) => a.data.id - b.data.id)
 
   // Pagination Functions
   function goNextPage() {
@@ -49,12 +51,12 @@ function App() {
 
   return (
     <>
-      <PokemonList show={show} setModalData={setModalData} setShow={setShow} fPD={fPD} />
+      <PokemonList show={show} setModalData={setModalData} setShow={setShow} fPokeData={fPokeData} />
       <Pagination 
         goNextPage={nextPageURL ? goNextPage : null} 
         goPrevPage={prevPageURL ? goPrevPage : null}
       />
-      <PokemonCard modalData={modalData} onClose={() => setShow(false)} show={show} />
+      <PokemonCard moveData={moveData} setMoveData={setMoveData} modalData={modalData} onClose={() => {setShow(false); setMoveData()}} show={show} />
     </>
   );
 }

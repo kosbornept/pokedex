@@ -1,17 +1,17 @@
 import React from 'react'
 
-export default function PokemonList({ fPD, setShow,setModalData }) {
+export default function PokemonList({ fPokeData, setShow,setModalData }) {
   return (
     <div className='listContainer'>
-        {fPD.map(p => (
+        {fPokeData.map(p => (
           <div onClick={() => {
             setShow(true); 
             setModalData(p);
           }} 
-            className='pokeContainer'>
+            className='pokeContainer' key={p.data.name}>
             <div className='detailContainer'>
               <div className='nameContainer'>
-                <h3 key={p.data.name} className='listItem' fPD={fPD}>
+                <h3 key={p.data.name} className='listItem'>
                   {p.data.name}
                 </h3>
               </div>

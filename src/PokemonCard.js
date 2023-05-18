@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 export default function PokemonCard( { show, onClose, modalData, moveData, setMoveData }) {
 
@@ -52,7 +54,25 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                     </div>
                 </div>
                 <div className='modalRight'>
-                    <img alt={modalData.data.name} src={modalData.data.sprites.other['official-artwork'].front_default} title='Official Artwork' />
+                    <Tabs>
+                        <TabList className="tablistBar">
+                            <Tab>Official Artwork</Tab>
+                            <Tab>Sprite</Tab>
+                            {modalData.data.sprites.front_shiny &&<Tab>Shiny Sprite</Tab>}
+                            {modalData.data.sprites.front_female && <Tab>Female Sprite</Tab>}
+                            {modalData.data.sprites.other.home.front_default && <Tab>Home</Tab>}
+                        </TabList>
+
+                        <TabPanel>
+                            <img className='pokemonArt' alt={modalData.data.name} src={modalData.data.sprites.other['official-artwork'].front_default} title='Official Artwork' />
+                        </TabPanel>
+                        <TabPanel>
+                            <img className='pokemonSpriteArt' alt={modalData.data.name} src={modalData.data.sprites.front_default} title='Default Sprite' />
+                        </TabPanel>
+                        {modalData.data.sprites.front_shiny && <TabPanel><img className='pokemonSpriteArt' alt={modalData.data.name} src={modalData.data.sprites.front_shiny} title='Shiny Sprite' /></TabPanel>}
+                        {modalData.data.sprites.front_female && <TabPanel><img className='pokemonSpriteArt' alt={modalData.data.name} src={modalData.data.sprites.front_female} title='Default Sprite' /></TabPanel>}
+                        {modalData.data.sprites.other.home.front_default && <TabPanel><img className='pokemonArt' alt={modalData.data.name} src={modalData.data.sprites.other.home.front_default} title='Home' /></TabPanel>}
+                    </Tabs>
                     <div>
                         <select onChange={handleChange} className='moveSelect'>
                             <option>--Select a move--</option>

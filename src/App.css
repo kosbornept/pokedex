@@ -35,6 +35,22 @@
     width: 10vw;
 }
 
+.mainNavTab {
+    position: fixed;
+    top: 25vh;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+    transition: top 0.6s;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainNavTab > * {
+    background-color: #6390F0;
+}
+
 .pokeContainer {
     outline: .2em solid #ba1f1f;
     margin: .5em;
@@ -220,13 +236,28 @@ h4.fairy {
     width: 40%;
     text-align: center;
     margin: auto;
+    margin-top: 30vh;
 }
 
-.modalRight > img {
+.react-tabs__tab--selected {
+    background-color: red !important;
+    color: white;
+}
+
+.react-tabs__tab:focus:after {
+    background: none;
+}
+
+.pokemonArt, .pokemonSpriteArt {
     object-fit: contain;
     max-height: 50vh;
     margin-top: -60vh;
     background-color: transparent;
+    padding-bottom: 12vh;
+}
+
+.pokemonSpriteArt {
+    height: 30vh;
 }
 
 .physicalContainer,

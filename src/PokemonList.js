@@ -21,7 +21,7 @@ export default function PokemonList({ fPokeData, setShow,setModalData }) {
               </div>
             </div>
             <div className='imgContainer'>
-              <img className='pokeImg' alt={p.data.name} src={p.data.sprites.other.dream_world.front_default} />
+              {p.data.sprites.other.dream_world.front_default ? <img className='pokeImg' alt={p.data.name} src={p.data.sprites.other.dream_world.front_default} /> : <img className='pokeImg' alt={p.data.name} src={p.data.sprites.other['official-artwork'].front_default} />}
             </div>
           </div>
         ))}

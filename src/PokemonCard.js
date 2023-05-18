@@ -61,11 +61,17 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                             })}
                         </select> 
                         <div className='moveDetails'>
-                            <p>{moveData && 'Class: ' + moveData.data.damage_class.name}</p>
-                            <p>{moveData && 'Type: ' + moveData.data.type.name}</p>
-                            <p>{moveData && 'Entry: ' + moveData.data.flavor_text_entries[0].flavor_text}</p>
-                            <p>{moveData && 'Power: ' + moveData.data.power}</p>
-                            <p>{moveData && 'PP: ' + moveData.data.pp}</p>
+                            <div className='moveDiv1'>
+                                <p>{moveData && 'Type: ' + moveData.data.type.name}</p>
+                                <p>{moveData && 'Class: ' + moveData.data.damage_class.name}</p>
+                            </div>
+                            <div className='moveDiv2'>
+                                <p>{moveData && 'Power: ' + moveData.data.power}</p>
+                                <p>{moveData && 'PP: ' + moveData.data.pp}</p>
+                            </div>
+                            <div className='moveDiv3'>
+                                <p>{moveData && 'Entry: ' + moveData.data.flavor_text_entries[0].flavor_text}</p>
+                            </div>
                         </div>  
                     </div>
                 </div>

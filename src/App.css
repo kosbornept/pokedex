@@ -262,7 +262,14 @@ h4.fairy {
     margin-bottom: -34vh;
 }
 
-.movedetails > p {
+.moveDetails > p {
     width: 90%;
-    padding: 1em;
+    /* padding: 1em; */
+    margin: 0 !important;
+}
+
+.moveDiv1, .moveDiv2, .moveDiv3 {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 3em;
 }

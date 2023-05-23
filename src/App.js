@@ -71,7 +71,7 @@ function App() {
       setTabIndex(8);
     }
     if(e === 9) {
-      setCurrentURL("https://pokeapi.co/api/v2/pokemon?limit=105&offset=906")
+      setCurrentURL("https://pokeapi.co/api/v2/pokemon?limit=105&offset=905")
       setTabIndex(9);
     }
     // if(e === 10) {

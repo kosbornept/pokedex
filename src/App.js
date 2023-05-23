@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import PokemonList from "./PokemonList";
 import PokemonCard from "./PokemonCard";
@@ -34,7 +34,7 @@ function App() {
   }, [pokemonURL])
 
   // Filter and arrange data
-  const fPokeData = [...new Map(pokemonData.map(v => [v.data.id, v])).values()]
+  const fPokeData = useMemo(() => [...new Map(pokemonData.map(v => [v.data.id, v])).values()], [pokemonData])
   fPokeData.sort((a,b) => a.data.id - b.data.id)
 
   function handleSelect(e) {

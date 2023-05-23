@@ -75,7 +75,7 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                     </Tabs>
                     <div>
                         <select onChange={handleChange} className='moveSelect'>
-                            <option>--Select a move--</option>
+                            <option selected="selected" disabled="disabled">--Select a move--</option>
                             {modalData.data.moves.map(m => {
                                 return <option key={m.move.name} value={m.move.url}>{m.move.name}</option>
                             })}
@@ -90,7 +90,7 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                                 <p>{moveData && 'PP: ' + moveData.data.pp}</p>
                             </div>
                             <div className='moveDiv3'>
-                                <p>{moveData && 'Entry: ' + moveData.data.flavor_text_entries[0].flavor_text}</p>
+                                <p>{moveData && 'Entry: ' + moveData.data.flavor_text_entries.find(c => c.language.name === "en").flavor_text}</p>
                             </div>
                         </div>  
                     </div>

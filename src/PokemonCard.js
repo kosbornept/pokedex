@@ -54,6 +54,7 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                     </div>
                 </div>
                 <div className='modalRight'>
+                    <div className='pokeImgChooser'>
                     <Tabs>
                         <TabList className="tablistBar">
                             <Tab>Official Artwork</Tab>
@@ -73,6 +74,7 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                         {modalData.data.sprites.front_female && <TabPanel><img className='pokemonSpriteArt' alt={modalData.data.name} src={modalData.data.sprites.front_female} title='Default Sprite' /></TabPanel>}
                         {modalData.data.sprites.other.home.front_default && <TabPanel><img className='pokemonArt' alt={modalData.data.name} src={modalData.data.sprites.other.home.front_default} title='Home' /></TabPanel>}
                     </Tabs>
+                    </div>
                     <div>
                         <select onChange={handleChange} className='moveSelect'>
                             <option selected="selected" disabled="disabled">--Select a move--</option>
@@ -94,6 +96,7 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                             </div>
                         </div>  
                     </div>
+                    <button className='closeBtn' onClick={onClose}>Close</button>
                 </div>
             </div>      
             </div>

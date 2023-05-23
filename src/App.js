@@ -85,7 +85,7 @@ function App() {
   return (
     <Tabs defaultIndex={tabIndex} onSelect={handleSelect}>
       <TabList className="mainNavTab" >
-        <Tab>Home</Tab>
+        <Tab className="hide">Home</Tab>
         <Tab>Gen 1</Tab>
         <Tab>Gen 2</Tab>
         <Tab>Gen 3</Tab>
@@ -97,8 +97,11 @@ function App() {
         <Tab>Gen 9</Tab>
         {/* <Tab>Specials</Tab> */}
       </TabList>
-      <TabPanel>
+      <TabPanel className="homeText hide">
         Welcome to my Pokémon API React project.
+        <br />
+        <br />
+        This project was undertaken to showcase knowledge of react and api calls.
       </TabPanel>
       <TabPanel><PokemonList show={show} setModalData={setModalData} setShow={setShow} fPokeData={fPokeData} /></TabPanel>
       <TabPanel><PokemonList show={show} setModalData={setModalData} setShow={setShow} fPokeData={fPokeData} /></TabPanel>

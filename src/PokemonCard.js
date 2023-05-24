@@ -72,7 +72,7 @@ export default function PokemonCard( { show, onClose, modalData, moveData, setMo
                         </TabPanel>
                         {modalData.data.sprites.front_shiny && <TabPanel><img className='pokemonSpriteArt' alt={modalData.data.name} src={modalData.data.sprites.front_shiny} title='Shiny Sprite' /></TabPanel>}
                         {modalData.data.sprites.front_female && <TabPanel><img className='pokemonSpriteArt' alt={modalData.data.name} src={modalData.data.sprites.front_female} title='Default Sprite' /></TabPanel>}
-                        {modalData.data.sprites.other.home.front_default && <TabPanel><img className='pokemonArt' alt={modalData.data.name} src={modalData.data.sprites.other.home.front_default} title='Home' /></TabPanel>}
+                        {modalData.data.sprites.other.home.front_default && <TabPanel><img className='pokemonArtHome' alt={modalData.data.name} src={modalData.data.sprites.other.home.front_default} title='Home' /></TabPanel>}
                     </Tabs>
                     </div>
                     <div>

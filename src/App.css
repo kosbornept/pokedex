@@ -233,7 +233,7 @@ h4.fairy {
 .modalBody {
     padding: 1em;
     display: flex;
-    gap: 1%
+    gap: 1%;
 }
 
 .modalLeft {
@@ -251,7 +251,7 @@ h4.fairy {
     margin-top: 30vh;
 }
 
-.pokemonArt, .pokemonSpriteArt {
+.pokemonArt, .pokemonSpriteArt, .pokemonArtHome {
     object-fit: contain;
     max-height: 50vh;
     margin-top: -60vh;
@@ -321,7 +321,7 @@ h4.fairy {
 
 /* Mobile - S */
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 725px) {
     
     .hide {
         display: none;
@@ -333,6 +333,7 @@ h4.fairy {
         writing-mode: vertical-lr;
         left: 0;
         right: 0;
+        transform: scale(.9);
     }
 
     .react-tabs__tab {
@@ -355,22 +356,39 @@ h4.fairy {
         flex-direction: column;
         padding: 0;
         margin: 0;
+        gap: 0;
+    }
+
+    .modalLeft > .typeContainer {
+        justify-content: space-evenly;
+        flex-direction: row;
     }
 
     h4 {
-        width: 50%;
+        width: 45%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .listItem {
+        font-size: .9em;
+        text-align: left !important;
+    }
+
+    .nameContainer {
+        margin-left: 0;
     }
 
     .modalContent {
         width: 100vw;
         height: 100vh;
         border: none;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .modalBody {
         display: block;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .modalLeft {
@@ -382,8 +400,9 @@ h4.fairy {
         width: 100%;
     }
 
-    .pokemonArt, .pokemonSpriteArt {
+    .pokemonArt, .pokemonSpriteArt, .pokemonArtHome {
         max-height: 25vh;
+        padding-bottom: 20vh;
     }
 
     .closeBtn {
@@ -402,15 +421,16 @@ h4.fairy {
 
 /* Tablet */
 
-@media only screen and (min-width: 426px) {
+@media only screen and (min-width: 725px) {
     .hide {
         display: none;
     }
 
     .mainNavTab {
+        writing-mode: horizontal-tb;
+        flex-direction: row;
         position: fixed;
         top: 0;
-        writing-mode: vertical-lr;
         left: 0;
         right: 0;
     }
@@ -426,14 +446,20 @@ h4.fairy {
     }
 
     .typeContainer {
-        flex-direction: column;
+        flex-direction: row;
         padding: 0;
-        margin: 0 0 2em;
-
+        margin: 0;
+        justify-content: start;
     }
 
     h4 {
-        width: 50%;
+        width: 45%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nameContainer {
+        margin-left: 0;
     }
 
     .pokeContainer:nth-child(-n+2) {
@@ -443,12 +469,12 @@ h4.fairy {
     .modalContent {
         width: 80vw;
         height: 90vh;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .modalBody {
         display: block;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .modalLeft {
@@ -457,6 +483,7 @@ h4.fairy {
 
     .modalLeft > .typeContainer {
         flex-direction: row;
+        justify-content: space-around;
     }
 
     .modalRight {
@@ -468,6 +495,12 @@ h4.fairy {
     }
 
     .pokemonArt, .pokemonSpriteArt {
+        max-height: 25vh;
+        padding-bottom: 20vh;
+    }
+
+    .pokemonArtHome {
+        padding-bottom: 18vh;
         max-height: 25vh;
     }
 
@@ -482,13 +515,6 @@ h4.fairy {
     .closeBtn {
         display: block;
         width: 100%;
-    }
-}
-
-@media only screen and (min-width: 726px) {
-    .mainNavTab {
-        writing-mode: horizontal-tb;
-        flex-direction: row;
     }
 }
 
@@ -528,12 +554,12 @@ h4.fairy {
     }
 
     .modal {
-        overflow: hidden;
+        overflow-y: hidden;
     }
 
     .modalBody {
         display: flex;
-        overflow: hidden;
+        overflow-y: hidden;
     }
 
     .modalRight {
